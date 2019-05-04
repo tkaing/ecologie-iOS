@@ -1,5 +1,5 @@
 //
-//  MembersViewController.swift
+//  MemberFormViewController.swift
 //  Ecologie
 //
 //  Created by Thierry Kg on 10/03/2019.
@@ -8,8 +8,9 @@
 
 import UIKit
 
-class MembersViewController: UIViewController {
+class MemberForm: UIViewController {
 
+    @IBOutlet weak var name: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,8 +21,8 @@ class MembersViewController: UIViewController {
     // Instance
     
     class func newInstance() ->
-        MembersViewController {
-            return MembersViewController()
+        MemberForm {
+            return MemberForm()
     }
     
     // Initialization
@@ -29,7 +30,7 @@ class MembersViewController: UIViewController {
     func initNavigation()
     {
         // *** Title ***
-        self.navigationItem.title = "Tous les membres"
+        self.navigationItem.title = "Ajouter un membre"
         
         // *** Back button ***
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)

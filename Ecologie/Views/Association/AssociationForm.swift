@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AssociationFormViewController: UIViewController {
+class AssociationForm: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +20,8 @@ class AssociationFormViewController: UIViewController {
     // Instance
     
     class func newInstance() ->
-        AssociationFormViewController {
-            return AssociationFormViewController()
+        AssociationForm {
+            return AssociationForm()
     }
     
     // Initialization

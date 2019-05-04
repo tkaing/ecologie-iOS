@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CourseFormViewController: UIViewController {
+class CourseForm: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +20,8 @@ class CourseFormViewController: UIViewController {
     // Instance
     
     class func newInstance() ->
-        CourseFormViewController {
-            return CourseFormViewController()
+        CourseForm {
+            return CourseForm()
     }
     
     // Initialization

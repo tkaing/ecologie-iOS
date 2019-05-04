@@ -1,5 +1,5 @@
 //
-//  AssociationViewController.swift
+//  AuthenticationViewController.swift
 //  Ecologie
 //
 //  Created by Thierry Kg on 10/03/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AssociationViewController: UIViewController {
+class AuthenticationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,22 +17,41 @@ class AssociationViewController: UIViewController {
         initNavigation()
     }
     
-    // Instance
-    
-    class func newInstance() ->
-        AssociationViewController {
-            return AssociationViewController()
-    }
-    
     // Initialization
     
     func initNavigation()
     {
         // *** Title ***
-        self.navigationItem.title = "Mon association"
+        self.navigationItem.title = "S'authentifier"
         
         // *** Back button ***
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
+    }
+    
+    // Events
+    
+    @IBAction func loggedButton(_ sender: UIButton)
+    {
+        self.redirectToHomeVC()
+    }
+    
+    @IBAction func registerButton(_ sender: UIButton)
+    {
+        self.redirectToAssoFormVC()
+    }
+    
+    // Objectif-C
+    
+    @objc private func redirectToHomeVC()
+    {
+        let homeVC = Home.newInstance()
+        self.navigationController?.pushViewController(homeVC, animated: true)
+    }
+    
+    @objc private func redirectToAssoFormVC()
+    {
+        let assoVC = Association.newInstance()
+        self.navigationController?.pushViewController(assoVC, animated: true)
     }
     
 

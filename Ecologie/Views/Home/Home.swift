@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class Home: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +20,8 @@ class HomeViewController: UIViewController {
     // Instance
     
     class func newInstance() ->
-        HomeViewController {
-            return HomeViewController()
+        Home {
+            return Home()
     }
     
     // Initialization
@@ -66,31 +66,31 @@ class HomeViewController: UIViewController {
     
     @objc private func redirectToMembersVC()
     {
-        let vc = MembersViewController.newInstance()
+        let vc = Members.newInstance()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func redirectToMemberFormVC()
     {
-        let vc = MemberFormViewController.newInstance()
+        let vc = MemberForm.newInstance()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func redirectToCoursesVC()
     {
-        let vc = CoursesViewController.newInstance()
+        let vc = Courses.newInstance()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func redirectToCourseFormVC()
     {
-        let vc = CourseFormViewController.newInstance()
+        let vc = CourseForm.newInstance()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func redirectToAssociationVC()
     {
-        let vc = AssociationViewController.newInstance()
+        let vc = Association.newInstance()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -1,5 +1,5 @@
 //
-//  CoursesViewController.swift
+//  MembersViewController.swift
 //  Ecologie
 //
 //  Created by Thierry Kg on 10/03/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CoursesViewController: UIViewController {
+class Members: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +20,8 @@ class CoursesViewController: UIViewController {
     // Instance
     
     class func newInstance() ->
-        CoursesViewController {
-            return CoursesViewController()
+        Members {
+            return Members()
     }
     
     // Initialization
@@ -29,7 +29,7 @@ class CoursesViewController: UIViewController {
     func initNavigation()
     {
         // *** Title ***
-        self.navigationItem.title = "Tous les parcours"
+        self.navigationItem.title = "Tous les membres"
         
         // *** Back button ***
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
