@@ -1,5 +1,5 @@
 //
-//  AuthenticationViewController.swift
+//  Authentication.swift
 //  Ecologie
 //
 //  Created by Thierry Kg on 10/03/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AuthenticationViewController: UIViewController {
+class Authentication: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

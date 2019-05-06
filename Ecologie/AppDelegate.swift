@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // *** Show AuthenticationVC (with navbar) ***
-        let authViewController = AuthenticationViewController()
+        let authViewController = Authentication()
         let navController = UINavigationController(rootViewController: authViewController)
         
         // *** Window ***

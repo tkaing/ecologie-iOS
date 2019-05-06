@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  Home.swift
 //  Ecologie
 //
 //  Created by Thierry Kg on 10/03/2019.
@@ -15,6 +15,7 @@ class Home: UIViewController {
 
         // Do any additional setup after loading the view.
         initNavigation()
+        testmodel()
     }
     
     // Instance
@@ -33,6 +34,22 @@ class Home: UIViewController {
         
         // *** Back button ***
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
+    }
+    
+
+    
+    // testmodel
+    func testmodel()
+    {
+        let jsonObject: [String: Any] = [
+            "email": "association@mail.fr",
+            "name": "AssoTest",
+            "identifier": "identiteTest",
+            "phone": "0978654321",
+            "location": "Quelquepart",
+            "createdAt": "" ]
+        
+        print(jsonObject)
     }
     
     // Events
