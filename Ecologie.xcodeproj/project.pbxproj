@@ -14,7 +14,7 @@
 		0C47AD8A227DF49D0059D569 /* CourseShow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C47AD88227DF49D0059D569 /* CourseShow.xib */; };
 		0C47AD8E227DFF980059D569 /* AssociationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C47AD8D227DFF980059D569 /* AssociationModel.swift */; };
 		0C47AD90227DFFE80059D569 /* CourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C47AD8F227DFFE80059D569 /* CourseModel.swift */; };
-		0C47AD92227E00050059D569 /* MenberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C47AD91227E00050059D569 /* MenberModel.swift */; };
+		0C47AD92227E00050059D569 /* MemberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C47AD91227E00050059D569 /* MemberModel.swift */; };
 		50E4BD6F2235778400A03834 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4BD6E2235778400A03834 /* AppDelegate.swift */; };
 		50E4BD762235778800A03834 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50E4BD752235778800A03834 /* Assets.xcassets */; };
 		50E4BD792235778800A03834 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50E4BD772235778800A03834 /* LaunchScreen.storyboard */; };
@@ -44,7 +44,7 @@
 		0C47AD88227DF49D0059D569 /* CourseShow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseShow.xib; sourceTree = "<group>"; };
 		0C47AD8D227DFF980059D569 /* AssociationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssociationModel.swift; sourceTree = "<group>"; };
 		0C47AD8F227DFFE80059D569 /* CourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseModel.swift; sourceTree = "<group>"; };
-		0C47AD91227E00050059D569 /* MenberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenberModel.swift; sourceTree = "<group>"; };
+		0C47AD91227E00050059D569 /* MemberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberModel.swift; sourceTree = "<group>"; };
 		50E4BD6B2235778400A03834 /* Ecologie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ecologie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50E4BD6E2235778400A03834 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50E4BD752235778800A03834 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 			children = (
 				0C47AD8D227DFF980059D569 /* AssociationModel.swift */,
 				0C47AD8F227DFFE80059D569 /* CourseModel.swift */,
-				0C47AD91227E00050059D569 /* MenberModel.swift */,
+				0C47AD91227E00050059D569 /* MemberModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -279,7 +279,7 @@
 				50E4BD9622358FD000A03834 /* CourseForm.swift in Sources */,
 				50E4BD9E2235955200A03834 /* Association.swift in Sources */,
 				0C47AD83227DF3D00059D569 /* AssociationService.swift in Sources */,
-				0C47AD92227E00050059D569 /* MenberModel.swift in Sources */,
+				0C47AD92227E00050059D569 /* MemberModel.swift in Sources */,
 				0C47AD90227DFFE80059D569 /* CourseModel.swift in Sources */,
 				0C47AD89227DF49D0059D569 /* CourseShow.swift in Sources */,
 				0C47AD8E227DFF980059D569 /* AssociationModel.swift in Sources */,

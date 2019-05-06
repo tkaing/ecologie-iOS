@@ -1,5 +1,5 @@
 //
-//  MenberModel.swift
+//  MemberModel.swift
 //  Ecologie
 //
 //  Created by Mohamed dennoun on 04/05/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct AssociationModel {
+struct MemberModel {
     
     
     
