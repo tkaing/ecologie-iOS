@@ -7,10 +7,47 @@
 //
 
 import Foundation
+import ObjectMapper
 
-struct CourseModel {
+struct CourseModel:ImmutableMappable {
     
     
+    
+    var startOn: Date;
+    var endOn: Date;
+    var theme: String;
+    var location: String;
+    var createdAt: Date;
+    
+    init(map: Map) throws {
+        self.startOn = try map.value("startOn")
+        self.endOn = try map.value("endOn")
+        self.theme = try map.value("theme")
+        self.location = try map.value("location")
+        self.createdAt = try map.value("createdAt")
+    }
+    
+    static func buildDateTransformer() -> DateFormatterTransform {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-dd"
+        return DateFormatterTransform(dateFormatter: dateFormatter)
+    }
+    
+    mutating func mapping(map: Map) {
+        startOn >>> map["startOn"]
+        endOn >>> map["endOn"]
+        theme >>> map["theme"]
+        location >>> map["location"]
+        createdAt >>> (map["createdAt"], CourseModel.buildDateTransformer())
+    }
+    
+    init(startOn: Date, endOn: Date, theme: String, location: String, createdAt: Date) {
+        self.startOn = startOn
+        self.endOn = endOn
+        self.theme = theme
+        self.location = location
+        self.createdAt = createdAt
+    }
     
     
 }

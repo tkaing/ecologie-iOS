@@ -50,7 +50,7 @@ class Authentication: UIViewController {
     
     @objc private func redirectToAssoFormVC()
     {
-        let assoVC = Association.newInstance()
+        let assoVC = AssociationForm.newInstance()
         self.navigationController?.pushViewController(assoVC, animated: true)
     }
     
