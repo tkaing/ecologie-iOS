@@ -1,3 +1,3 @@
 #Application iOS
 
-#Branches (master -> dev !)
+#Branches (master -> dev)
