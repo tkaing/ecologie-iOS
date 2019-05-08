@@ -18,6 +18,10 @@ class Home: UIViewController {
         
         // Test ObjectMapper
         testObjectMapper()
+        // Test Model Course
+        testCourse()
+        // Test Model Membre
+        testMembre()
     }
     
     // Instance
@@ -44,6 +48,36 @@ class Home: UIViewController {
         let jsonObject: [String: Any] = [
             "identifier"    : "identiteTest",
             "name"          : "AssoTest",
+            "phone"         : "0978654321",
+            "email"         : "association@mail.fr",
+            "location"      : "Quelquepart",
+            "createdAt"     : ""
+        ]
+        
+        print(jsonObject)
+    }
+    
+    func testCourse()
+    {
+        let jsonObject: [String: Any] = [
+            "startOn"    : "courseTest",
+            "endOn"      : "AssoTest",
+            "theme"      : "0978654321",
+            "email"      : "association@mail.fr",
+            "location"   : "Quelquepart",
+            "createdAt"  : ""
+        ]
+        
+        print(jsonObject)
+    }
+    
+    
+    func testMembre()
+    {
+        let jsonObject: [String: Any] = [
+            "identifier"    : "identiteTest",
+            "firstname"     : "kipa",
+            "lastname"     : "tchu",
             "phone"         : "0978654321",
             "email"         : "association@mail.fr",
             "location"      : "Quelquepart",

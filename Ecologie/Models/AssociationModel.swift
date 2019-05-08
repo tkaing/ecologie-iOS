@@ -9,7 +9,8 @@
 import Foundation
 import ObjectMapper
 
-struct AssociationModel {
+struct AssociationModel: ImmutableMappable {
+
     
     var email: String;
     var name: String;
@@ -18,19 +19,30 @@ struct AssociationModel {
     var location: String;
     var createdAt: Date;
     
+    init(map: Map) throws {
+        self.email = try map.value("email")
+        self.name = try map.value("name")
+        self.identifier = try map.value("identifier")
+        self.phone = try map.value("phone")
+        self.location = try map.value("location")
+        self.createdAt = try map.value("createdAt")
+    }
+   
+    
+    
     static func buildDateTransformer() -> DateFormatterTransform {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd"
         return DateFormatterTransform(dateFormatter: dateFormatter)
     }
     
-    mutating func mapping(map: Map) {
-        email <- map["email"]
-        name <- map["name"]
-        identifier <- map["identifier"]
-        phone <- map["phone"]
-        location <- map["location"]
-        createdAt <- (map["createdAt"], AssociationModel.buildDateTransformer())
+     func mapping(map: Map) {
+        email >>> map["email"]
+        name >>> map["name"]
+        identifier >>> map["identifier"]
+        phone >>> map["phone"]
+        location >>> map["location"]
+        createdAt >>> (map["createdAt"], AssociationModel.buildDateTransformer())
     }
     
     init(email: String, name: String, identifier: String, phone: String, location: String, createdAt: Date) {
