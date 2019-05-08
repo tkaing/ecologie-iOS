@@ -1,5 +1,5 @@
 //
-//  Association.swift
+//  AssociationShow.swift
 //  Ecologie
 //
 //  Created by Thierry Kg on 10/03/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Association: UIViewController {
+class AssociationShow: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +20,8 @@ class Association: UIViewController {
     // Instance
     
     class func newInstance() ->
-        Association {
-            return Association()
+        AssociationShow {
+            return AssociationShow()
     }
     
     // Initialization

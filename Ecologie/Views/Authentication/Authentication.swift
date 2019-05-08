@@ -25,7 +25,8 @@ class Authentication: UIViewController {
         self.navigationItem.title = "S'authentifier"
         
         // *** Back button ***
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
+        let barButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
+        self.navigationItem.backBarButtonItem = barButtonItem
     }
     
     // Events

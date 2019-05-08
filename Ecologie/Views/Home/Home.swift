@@ -142,7 +142,7 @@ class Home: UIViewController {
     
     @objc private func redirectToAssociationVC()
     {
-        let vc = Association.newInstance()
+        let vc = AssociationShow.newInstance()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
