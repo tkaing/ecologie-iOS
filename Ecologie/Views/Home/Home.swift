@@ -15,7 +15,9 @@ class Home: UIViewController {
 
         // Do any additional setup after loading the view.
         initNavigation()
-        testmodel()
+        
+        // Test ObjectMapper
+        testObjectMapper()
     }
     
     // Instance
@@ -36,18 +38,17 @@ class Home: UIViewController {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
     }
     
-
-    
-    // testmodel
-    func testmodel()
+    // testObjectMapper
+    func testObjectMapper()
     {
         let jsonObject: [String: Any] = [
-            "email": "association@mail.fr",
-            "name": "AssoTest",
-            "identifier": "identiteTest",
-            "phone": "0978654321",
-            "location": "Quelquepart",
-            "createdAt": "" ]
+            "identifier"    : "identiteTest",
+            "name"          : "AssoTest",
+            "phone"         : "0978654321",
+            "email"         : "association@mail.fr",
+            "location"      : "Quelquepart",
+            "createdAt"     : ""
+        ]
         
         print(jsonObject)
     }
