@@ -26,7 +26,7 @@ struct Member : ImmutableMappable {
         self.birthdate = try map.value("birthdate")
         self.phone = try map.value("phone")
         self.location = try map.value("location")
-        self.createdAt = try map.value("createdAt")
+        self.createdAt = try map.value("createdAt", using: Member.buildDateTransformer())
     }
     
     

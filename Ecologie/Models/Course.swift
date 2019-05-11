@@ -22,7 +22,7 @@ struct Course : ImmutableMappable {
         self.endOn = try map.value("endOn")
         self.theme = try map.value("theme")
         self.location = try map.value("location")
-        self.createdAt = try map.value("createdAt")
+        self.createdAt = try map.value("createdAt", using: Course.buildDateTransformer())
     }
     
     static func buildDateTransformer() -> DateFormatterTransform {

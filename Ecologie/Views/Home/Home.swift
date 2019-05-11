@@ -16,12 +16,8 @@ class Home: UIViewController {
         // Do any additional setup after loading the view.
         initNavigation()
         
-        // Test ObjectMapper
-        testObjectMapper()
-        // Test Model Course
-        testCourse()
-        // Test Model Membre
-        testMembre()
+        // Test findAll
+        testFindAll()
     }
     
     // Instance
@@ -42,49 +38,13 @@ class Home: UIViewController {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
     }
     
-    // testObjectMapper
-    func testObjectMapper()
+    // Test findAll
+    func testFindAll()
     {
-        let jsonObject: [String: Any] = [
-            "identifier"    : "identiteTest",
-            "name"          : "AssoTest",
-            "phone"         : "0978654321",
-            "email"         : "association@mail.fr",
-            "location"      : "Quelquepart",
-            "createdAt"     : ""
-        ]
-        
-        print(jsonObject)
-    }
-    
-    func testCourse()
-    {
-        let jsonObject: [String: Any] = [
-            "startOn"    : "courseTest",
-            "endOn"      : "AssoTest",
-            "theme"      : "0978654321",
-            "email"      : "association@mail.fr",
-            "location"   : "Quelquepart",
-            "createdAt"  : ""
-        ]
-        
-        print(jsonObject)
-    }
-    
-    
-    func testMembre()
-    {
-        let jsonObject: [String: Any] = [
-            "identifier"    : "identiteTest",
-            "firstname"     : "kipa",
-            "lastname"     : "tchu",
-            "phone"         : "0978654321",
-            "email"         : "association@mail.fr",
-            "location"      : "Quelquepart",
-            "createdAt"     : ""
-        ]
-        
-        print(jsonObject)
+        AssociationService.default.findAll() { (associations) in
+            
+            print(associations)
+        }
     }
     
     // Events
