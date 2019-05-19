@@ -8,11 +8,11 @@
 
 import Alamofire
 
-public class AssociationService: ObjectService {
+public class AssociationService: RequestService<Association> {
 
     public static let `default` = AssociationService()
     
-    let ROUTE_DEFAULT = "associations"
+    let ROUTE_BASE = "associations"
     
     private override init () {
         // code...
@@ -20,19 +20,9 @@ public class AssociationService: ObjectService {
     
     public func findAll(complete: @escaping ([Association]) -> Void) {
         
-        let route: String = self.API_DEFAULT + self.ROUTE_DEFAULT
+        let route: String = self.API_DEFAULT + self.ROUTE_BASE
         
-        var associations: [Association] = []
-        
-        self.findAll(address: route) { (objects) in
-            
-            for object in objects {
-                
-                guard let association = (try? Association(JSON: object))
-                else { return }
-                
-                associations.append(association)
-            }
+        self.findAll(address: route) { (associations) in
             
             complete(associations)
         }

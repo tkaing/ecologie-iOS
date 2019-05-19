@@ -9,18 +9,29 @@
 import Foundation
 import ObjectMapper
 
-public struct Association : ImmutableMappable {
+public struct Association: ImmutableMappable {
     
-    var name: String;
-    var email: String;
-    var phone: String;
-    var location: String;
-    var birthdate: Date;
-    var createdAt: Date;
-    var identifier: String;
+    var id: String
+    var name: String
+    var email: String
+    var phone: String
+    var location: String
+    var birthdate: Date
+    var createdAt: Date
+    var identifier: String
     
-    // Constructor: Default
-    init(email: String, name: String, identifier: String, phone: String, location: String, birthdate: Date, createdAt: Date) {
+    /*init(email: String, name: String, identifier: String, phone: String, location: String, birthdate: Date, createdAt: Date) {
+        self.name       = name
+        self.email      = email
+        self.phone      = phone
+        self.location   = location
+        self.birthdate  = birthdate
+        self.createdAt  = createdAt
+        self.identifier = identifier
+    }*/
+    
+    init(id: String, email: String, name: String, identifier: String, phone: String, location: String, birthdate: Date, createdAt: Date) {
+        self.id         = id
         self.name       = name
         self.email      = email
         self.phone      = phone
@@ -30,8 +41,9 @@ public struct Association : ImmutableMappable {
         self.identifier = identifier
     }
     
-    // Constructor: JSON -> Model
+    // JSON -> Model
     public init(map: Map) throws {
+        self.id         = try map.value("_id")
         self.name       = try map.value("name")
         self.email      = try map.value("email")
         self.phone      = try map.value("phone")
@@ -43,6 +55,7 @@ public struct Association : ImmutableMappable {
     
     // Model -> JSON
     public func mapping(map: Map) {
+        id          >>> (map["_id"])
         name        >>> (map["name"])
         email       >>> (map["email"])
         phone       >>> (map["phone"])

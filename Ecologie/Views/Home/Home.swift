@@ -41,10 +41,6 @@ class Home: UIViewController {
     // Test findAll
     func testFindAll()
     {
-        AssociationService.default.findAll() { (associations) in
-            
-            print(associations)
-        }
     }
     
     // Events
