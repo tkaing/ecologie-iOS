@@ -22,8 +22,18 @@ public class RequestService<T: ImmutableMappable>
     }
     
     func find(address: String, complete: @escaping (T) -> Void) {
-        
-        
+       
+        Alamofire.request(address).responseJSON { (request) in
+            
+            guard let item = request.value as? [String: Any]
+            else { return }
+            
+            guard let object = (try? T(JSON: item))
+            else { return }
+            
+            // Execute callback / closure
+            complete(object)
+        }
     }
     
     func findAll(address: String, complete: @escaping ([T]) -> Void) {

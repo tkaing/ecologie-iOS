@@ -16,9 +16,13 @@ class Home: UIViewController {
         // Do any additional setup after loading the view.
         initNavigation()
         
+        // Test find
+        testFind()
+        
         // Test findAll
         testFindAll()
     }
+    
     
     // Instance
     
@@ -36,6 +40,11 @@ class Home: UIViewController {
         
         // *** Back button ***
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
+    }
+    
+    // Test find
+    func testFind()
+    {
     }
     
     // Test findAll

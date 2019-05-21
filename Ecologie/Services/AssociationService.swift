@@ -12,12 +12,21 @@ public class AssociationService: RequestService<Association> {
 
     public static let `default` = AssociationService()
     
-    let ROUTE_BASE = "associations"
+    let ROUTE_BASE = "associations/"
     
     private override init () {
         // code...
     }
     
+    public func find(id: String, complete: @escaping (Association) -> Void) {
+        
+        let route: String = self.API_DEFAULT + self.ROUTE_BASE + id
+        
+        self.find(address: route) { (association) in
+            
+            complete(association)
+        }
+    }
     public func findAll(complete: @escaping ([Association]) -> Void) {
         
         let route: String = self.API_DEFAULT + self.ROUTE_BASE
