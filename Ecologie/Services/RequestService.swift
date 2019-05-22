@@ -63,6 +63,25 @@ public class RequestService<T: ImmutableMappable>
     }
     
     func delete(address: String, complete: @escaping (Bool) -> Void) {
-        
+        var result : Bool = false
+        Alamofire.request(address , method: .delete)
+            .responseJSON { response in
+             
+                    if let httpStatusCode = response.response?.statusCode {
+                        switch(httpStatusCode) {
+                            case 200:
+                                result = true
+                            case 422:
+                                print("Association not founds")
+                            case 500:
+                                print("API Error")
+                            default:
+                                print("Error")
+                        }
+                    }
+                // Execute callback / closure
+                complete(result)
+        }
+       
     }
 }
