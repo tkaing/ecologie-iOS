@@ -21,6 +21,9 @@ class Home: UIViewController {
         
         // Test findAll
         testFindAll()
+        
+        // Test delete
+        testDelete()
     }
     
     
@@ -49,6 +52,11 @@ class Home: UIViewController {
     
     // Test findAll
     func testFindAll()
+    {
+    }
+    
+    // Test delete
+    func testDelete()
     {
     }
     

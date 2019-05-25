@@ -36,4 +36,14 @@ public class AssociationService: RequestService<Association> {
             complete(associations)
         }
     }
+    
+
+    public func delete(id: String, complete: @escaping (Bool) -> Void) {
+        
+        let route: String = self.API_DEFAULT + self.ROUTE_BASE + id
+        
+        self.delete(address: route) { (bool) in
+            complete(bool)
+        }
+    }
 }
