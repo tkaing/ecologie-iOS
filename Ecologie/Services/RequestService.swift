@@ -63,9 +63,11 @@ public class RequestService<T: ImmutableMappable>
     }
     
     func delete(address: String, complete: @escaping (Bool) -> Void) {
+        
         var result : Bool = false
+        
         Alamofire.request(address , method: .delete)
-            .responseJSON { response in
+            .responseJSON { (response) in
              
                     if let httpStatusCode = response.response?.statusCode {
                         switch(httpStatusCode) {
@@ -79,8 +81,9 @@ public class RequestService<T: ImmutableMappable>
                                 print("Error")
                         }
                     }
-                // Execute callback / closure
-                complete(result)
+                
+                    // Execute callback / closure
+                    complete(result)
         }
        
     }
