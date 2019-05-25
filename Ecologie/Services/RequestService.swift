@@ -75,10 +75,8 @@ public class RequestService<T: ImmutableMappable>
                                 result = true
                             case 422:
                                 print("Association not founds")
-                            case 500:
-                                print("API Error")
                             default:
-                                print("Error")
+                                print("Internal Serveur Error")
                         }
                     }
                 
