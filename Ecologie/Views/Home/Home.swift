@@ -16,16 +16,21 @@ class Home: UIViewController {
         // Do any additional setup after loading the view.
         initNavigation()
         
-        // Test find
+        // Test | create
+        testCreate()
+        
+        // Test | find
         testFind()
         
-        // Test findAll
+        // Test | findAll
         testFindAll()
         
-        // Test delete
+        // Test | update
+        testUpdate()
+        
+        // Test | delete
         testDelete()
     }
-    
     
     // Instance
     
@@ -42,23 +47,24 @@ class Home: UIViewController {
         self.navigationItem.title = "Que souhaitez-vous faire ?"
         
         // *** Back button ***
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
+        let item = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = item
     }
     
-    // Test find
-    func testFind()
-    {
-    }
+    // Test | create
+    func testCreate() {}
     
-    // Test findAll
-    func testFindAll()
-    {
-    }
+    // Test | find
+    func testFind() {}
     
-    // Test delete
-    func testDelete()
-    {
-    }
+    // Test | findAll
+    func testFindAll() {}
+    
+    // Test | update
+    func testUpdate() {}
+    
+    // Test | delete
+    func testDelete() {}
     
     // Events
     
