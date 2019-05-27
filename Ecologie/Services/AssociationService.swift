@@ -18,18 +18,29 @@ public class AssociationService: RequestService<Association> {
         // code...
     }
     
+    public func create(association: Association, complete: @escaping (Int) -> Void) {
+        
+        let route = self.API_DEFAULT + self.ROUTE_BASE
+        
+        self.create(address: route, object: association) { (status) in
+            
+            complete(status)
+        }
+    }
+    
     public func find(id: String, complete: @escaping (Association) -> Void) {
         
-        let route: String = self.API_DEFAULT + self.ROUTE_BASE + id
+        let route = self.API_DEFAULT + self.ROUTE_BASE + id
         
         self.find(address: route) { (association) in
             
             complete(association)
         }
     }
+    
     public func findAll(complete: @escaping ([Association]) -> Void) {
         
-        let route: String = self.API_DEFAULT + self.ROUTE_BASE
+        let route = self.API_DEFAULT + self.ROUTE_BASE
         
         self.findAll(address: route) { (associations) in
             
@@ -37,13 +48,33 @@ public class AssociationService: RequestService<Association> {
         }
     }
     
+    public func update(association: Association, complete: @escaping (Int) -> Void) {
+        
+        guard let identifier = association.id else {
+            print("id is nil")
+            return
+        }
+        
+        let route = self.API_DEFAULT + self.ROUTE_BASE + identifier
+        
+        self.update(address: route, object: association) { (status) in
+            
+            complete(status)
+        }
+    }
 
-    public func delete(id: String, complete: @escaping (Bool) -> Void) {
+    public func delete(association: Association, complete: @escaping (Int) -> Void) {
         
-        let route: String = self.API_DEFAULT + self.ROUTE_BASE + id
+        guard let identifier = association.id else {
+            print("id is nil")
+            return
+        }
         
-        self.delete(address: route) { (bool) in
-            complete(bool)
+        let route = self.API_DEFAULT + self.ROUTE_BASE + identifier
+        
+        self.delete(address: route) { (status) in
+            
+            complete(status)
         }
     }
 }

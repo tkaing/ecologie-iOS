@@ -13,11 +13,14 @@ public class RequestService<T: ImmutableMappable>
 {
     let API_DEFAULT = "http://localhost:3000/"
     
-    func create(address: String, object: T, complete: @escaping (T) -> Void) {
+    func create(address: String, object: T, complete: @escaping (Int) -> Void) {
         
-        Alamofire.request(address, method: .put, parameters: object.toJSON(), encoding: JSONEncoding.default).response { result in
+        Alamofire.request(address, method: .put, parameters: object.toJSON()).responseJSON { (request) in
             
-            //completion(res.response?.statusCode == 201)
+            guard let status = request.response?.statusCode
+            else { return }
+            
+            complete(status)
         }
     }
     
@@ -43,12 +46,12 @@ public class RequestService<T: ImmutableMappable>
         Alamofire.request(address).responseJSON { (request) in
             
             guard let items = request.value as? [[String: Any]]
-                else { return }
+            else { return }
             
             for item in items {
                 
                 guard let object = (try? T(JSON: item))
-                    else { return }
+                else { return }
                 
                 objects.append(object)
             }
@@ -58,31 +61,42 @@ public class RequestService<T: ImmutableMappable>
         }
     }
     
-    func update(address: String, complete: @escaping (T) -> Void) {
+    func update(address: String, object: T, complete: @escaping (Int) -> Void) {
         
+        Alamofire.request(address, method: .patch, parameters: object.toJSON()).responseJSON { (request) in
+            
+            guard let status = request.response?.statusCode
+            else { return }
+            
+            complete(status)
+        }
     }
     
-    func delete(address: String, complete: @escaping (Bool) -> Void) {
-        
-        var result : Bool = false
-        
-        Alamofire.request(address , method: .delete)
-            .responseJSON { (response) in
-             
-                    if let httpStatusCode = response.response?.statusCode {
-                        switch(httpStatusCode) {
-                            case 200:
-                                result = true
-                            case 422:
-                                print("Association not founds")
-                            default:
-                                print("Internal Serveur Error")
-                        }
-                    }
+    func delete(address: String, complete: @escaping (Int) -> Void) {
+       
+        Alamofire.request(address, method: .delete).responseJSON { (request) in
                 
-                    // Execute callback / closure
-                    complete(result)
+            guard let status = request.response?.statusCode
+            else { return }
+                
+            // Show popup
+            self.errorPopup(status: status)
+                
+            // Execute callback / closure
+            complete(status)
         }
        
+    }
+    
+    func errorPopup(status: Int) -> Void {
+
+        switch (status) {
+            case 200:
+                print("Popup for status 200")
+            case 422:
+                print("Popup for status 422")
+            default:
+                print("Popup for status 500 (Internal Serveur Error)")
+        }
     }
 }

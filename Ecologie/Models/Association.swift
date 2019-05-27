@@ -11,7 +11,7 @@ import ObjectMapper
 
 public struct Association: ImmutableMappable {
     
-    var id: String
+    var id: String?
     var name: String
     var email: String
     var phone: String
@@ -20,7 +20,9 @@ public struct Association: ImmutableMappable {
     var createdAt: Date
     var identifier: String
     
-    /*init(email: String, name: String, identifier: String, phone: String, location: String, birthdate: Date, createdAt: Date) {
+    // 1 | Initializer
+    init(id: String, email: String, name: String, identifier: String, phone: String, location: String, birthdate: Date, createdAt: Date) {
+        self.id         = id
         self.name       = name
         self.email      = email
         self.phone      = phone
@@ -28,10 +30,10 @@ public struct Association: ImmutableMappable {
         self.birthdate  = birthdate
         self.createdAt  = createdAt
         self.identifier = identifier
-    }*/
+    }
     
-    init(id: String, email: String, name: String, identifier: String, phone: String, location: String, birthdate: Date, createdAt: Date) {
-        self.id         = id
+    // 2 | Initializer
+    init(email: String, name: String, identifier: String, phone: String, location: String, birthdate: Date, createdAt: Date) {
         self.name       = name
         self.email      = email
         self.phone      = phone
