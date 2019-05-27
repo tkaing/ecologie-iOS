@@ -34,6 +34,12 @@ public class RequestService<T: ImmutableMappable>
             guard let object = (try? T(JSON: item))
             else { return }
             
+            guard let status = request.response?.statusCode
+            else { return }
+            
+            // Show popup
+            self.errorPopup(status: status)
+            
             // Execute callback / closure
             complete(object)
         }
@@ -68,6 +74,10 @@ public class RequestService<T: ImmutableMappable>
             guard let status = request.response?.statusCode
             else { return }
             
+            // Show popup
+            self.errorPopup(status: status)
+            
+            // Execute callback / closure
             complete(status)
         }
     }
@@ -93,6 +103,8 @@ public class RequestService<T: ImmutableMappable>
         switch (status) {
             case 200:
                 print("Popup for status 200")
+            case 404:
+                print("Popup for status 404")
             case 422:
                 print("Popup for status 422")
             default:
