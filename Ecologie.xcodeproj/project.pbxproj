@@ -12,10 +12,11 @@
 		0C47AD85227DF3E70059D569 /* CourseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C47AD84227DF3E70059D569 /* CourseService.swift */; };
 		0C47AD89227DF49D0059D569 /* CourseShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C47AD87227DF49D0059D569 /* CourseShow.swift */; };
 		0C47AD8A227DF49D0059D569 /* CourseShow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C47AD88227DF49D0059D569 /* CourseShow.xib */; };
-		0C47AD8E227DFF980059D569 /* AssociationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C47AD8D227DFF980059D569 /* AssociationModel.swift */; };
-		0C47AD90227DFFE80059D569 /* CourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C47AD8F227DFFE80059D569 /* CourseModel.swift */; };
-		0C47AD92227E00050059D569 /* MemberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C47AD91227E00050059D569 /* MemberModel.swift */; };
+		0C47AD8E227DFF980059D569 /* Association.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C47AD8D227DFF980059D569 /* Association.swift */; };
+		0C47AD90227DFFE80059D569 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C47AD8F227DFFE80059D569 /* Course.swift */; };
+		0C47AD92227E00050059D569 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C47AD91227E00050059D569 /* Member.swift */; };
 		1D8A8BFBF57920C9A2F1F20E /* Pods_Ecologie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5D472C3723D676CFD0B3F8 /* Pods_Ecologie.framework */; };
+		509F1CDD2283F9520051F113 /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509F1CDC2283F9520051F113 /* RequestService.swift */; };
 		50E4BD6F2235778400A03834 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4BD6E2235778400A03834 /* AppDelegate.swift */; };
 		50E4BD762235778800A03834 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50E4BD752235778800A03834 /* Assets.xcassets */; };
 		50E4BD792235778800A03834 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50E4BD772235778800A03834 /* LaunchScreen.storyboard */; };
@@ -33,8 +34,8 @@
 		50E4BD9722358FD000A03834 /* CourseForm.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E4BD9522358FD000A03834 /* CourseForm.xib */; };
 		50E4BD9A22358FE000A03834 /* Courses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4BD9822358FE000A03834 /* Courses.swift */; };
 		50E4BD9B22358FE000A03834 /* Courses.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E4BD9922358FE000A03834 /* Courses.xib */; };
-		50E4BD9E2235955200A03834 /* Association.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4BD9C2235955100A03834 /* Association.swift */; };
-		50E4BD9F2235955200A03834 /* Association.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E4BD9D2235955200A03834 /* Association.xib */; };
+		50E4BD9E2235955200A03834 /* AssociationShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4BD9C2235955100A03834 /* AssociationShow.swift */; };
+		50E4BD9F2235955200A03834 /* AssociationShow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E4BD9D2235955200A03834 /* AssociationShow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,9 +44,10 @@
 		0C47AD84227DF3E70059D569 /* CourseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseService.swift; sourceTree = "<group>"; };
 		0C47AD87227DF49D0059D569 /* CourseShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseShow.swift; sourceTree = "<group>"; };
 		0C47AD88227DF49D0059D569 /* CourseShow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseShow.xib; sourceTree = "<group>"; };
-		0C47AD8D227DFF980059D569 /* AssociationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssociationModel.swift; sourceTree = "<group>"; };
-		0C47AD8F227DFFE80059D569 /* CourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseModel.swift; sourceTree = "<group>"; };
-		0C47AD91227E00050059D569 /* MemberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberModel.swift; sourceTree = "<group>"; };
+		0C47AD8D227DFF980059D569 /* Association.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Association.swift; sourceTree = "<group>"; };
+		0C47AD8F227DFFE80059D569 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		0C47AD91227E00050059D569 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		509F1CDC2283F9520051F113 /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
 		50E4BD6B2235778400A03834 /* Ecologie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ecologie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50E4BD6E2235778400A03834 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50E4BD752235778800A03834 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,8 +67,8 @@
 		50E4BD9522358FD000A03834 /* CourseForm.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseForm.xib; sourceTree = "<group>"; };
 		50E4BD9822358FE000A03834 /* Courses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Courses.swift; sourceTree = "<group>"; };
 		50E4BD9922358FE000A03834 /* Courses.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Courses.xib; sourceTree = "<group>"; };
-		50E4BD9C2235955100A03834 /* Association.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Association.swift; sourceTree = "<group>"; };
-		50E4BD9D2235955200A03834 /* Association.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Association.xib; sourceTree = "<group>"; };
+		50E4BD9C2235955100A03834 /* AssociationShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssociationShow.swift; sourceTree = "<group>"; };
+		50E4BD9D2235955200A03834 /* AssociationShow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssociationShow.xib; sourceTree = "<group>"; };
 		58D6B3A5CB2335E57361A24C /* Pods-Ecologie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ecologie.release.xcconfig"; path = "Target Support Files/Pods-Ecologie/Pods-Ecologie.release.xcconfig"; sourceTree = "<group>"; };
 		AE5D472C3723D676CFD0B3F8 /* Pods_Ecologie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ecologie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E74EF9D7941CE4DBCF4D4812 /* Pods-Ecologie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ecologie.debug.xcconfig"; path = "Target Support Files/Pods-Ecologie/Pods-Ecologie.debug.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				0C47AD80227DF39D0059D569 /* UserService.swift */,
 				0C47AD82227DF3D00059D569 /* AssociationService.swift */,
 				0C47AD84227DF3E70059D569 /* CourseService.swift */,
+				509F1CDC2283F9520051F113 /* RequestService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -97,9 +100,9 @@
 		0C47AD8C227DFF540059D569 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0C47AD8D227DFF980059D569 /* AssociationModel.swift */,
-				0C47AD8F227DFFE80059D569 /* CourseModel.swift */,
-				0C47AD91227E00050059D569 /* MemberModel.swift */,
+				0C47AD8D227DFF980059D569 /* Association.swift */,
+				0C47AD8F227DFFE80059D569 /* Course.swift */,
+				0C47AD91227E00050059D569 /* Member.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -152,8 +155,8 @@
 		504C8757226E0A08005D17D3 /* Association */ = {
 			isa = PBXGroup;
 			children = (
-				50E4BD9C2235955100A03834 /* Association.swift */,
-				50E4BD9D2235955200A03834 /* Association.xib */,
+				50E4BD9C2235955100A03834 /* AssociationShow.swift */,
+				50E4BD9D2235955200A03834 /* AssociationShow.xib */,
 				50E4BD882235897F00A03834 /* AssociationForm.swift */,
 				50E4BD892235897F00A03834 /* AssociationForm.xib */,
 			);
@@ -207,7 +210,6 @@
 				E74EF9D7941CE4DBCF4D4812 /* Pods-Ecologie.debug.xcconfig */,
 				58D6B3A5CB2335E57361A24C /* Pods-Ecologie.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -283,7 +285,7 @@
 				50E4BD9722358FD000A03834 /* CourseForm.xib in Resources */,
 				50E4BD792235778800A03834 /* LaunchScreen.storyboard in Resources */,
 				50E4BD762235778800A03834 /* Assets.xcassets in Resources */,
-				50E4BD9F2235955200A03834 /* Association.xib in Resources */,
+				50E4BD9F2235955200A03834 /* AssociationShow.xib in Resources */,
 				50E4BD8B2235897F00A03834 /* AssociationForm.xib in Resources */,
 				50E4BD8F22358CF100A03834 /* MemberForm.xib in Resources */,
 				50E4BD9B22358FE000A03834 /* Courses.xib in Resources */,
@@ -352,13 +354,14 @@
 				50E4BD822235783500A03834 /* Authentication.swift in Sources */,
 				50E4BD9A22358FE000A03834 /* Courses.swift in Sources */,
 				0C47AD81227DF39D0059D569 /* UserService.swift in Sources */,
+				509F1CDD2283F9520051F113 /* RequestService.swift in Sources */,
 				50E4BD9622358FD000A03834 /* CourseForm.swift in Sources */,
-				50E4BD9E2235955200A03834 /* Association.swift in Sources */,
+				50E4BD9E2235955200A03834 /* AssociationShow.swift in Sources */,
 				0C47AD83227DF3D00059D569 /* AssociationService.swift in Sources */,
-				0C47AD92227E00050059D569 /* MemberModel.swift in Sources */,
-				0C47AD90227DFFE80059D569 /* CourseModel.swift in Sources */,
+				0C47AD92227E00050059D569 /* Member.swift in Sources */,
+				0C47AD90227DFFE80059D569 /* Course.swift in Sources */,
 				0C47AD89227DF49D0059D569 /* CourseShow.swift in Sources */,
-				0C47AD8E227DFF980059D569 /* AssociationModel.swift in Sources */,
+				0C47AD8E227DFF980059D569 /* Association.swift in Sources */,
 				50E4BD6F2235778400A03834 /* AppDelegate.swift in Sources */,
 				50E4BD8A2235897F00A03834 /* AssociationForm.swift in Sources */,
 				0C47AD85227DF3E70059D569 /* CourseService.swift in Sources */,

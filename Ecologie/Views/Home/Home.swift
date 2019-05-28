@@ -16,12 +16,20 @@ class Home: UIViewController {
         // Do any additional setup after loading the view.
         initNavigation()
         
-        // Test ObjectMapper
-        testObjectMapper()
-        // Test Model Course
-        testCourse()
-        // Test Model Membre
-        testMembre()
+        // Test | create
+        testCreate()
+        
+        // Test | find
+        testFind()
+        
+        // Test | findAll
+        testFindAll()
+        
+        // Test | update
+        testUpdate()
+        
+        // Test | delete
+        testDelete()
     }
     
     // Instance
@@ -39,53 +47,25 @@ class Home: UIViewController {
         self.navigationItem.title = "Que souhaitez-vous faire ?"
         
         // *** Back button ***
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
+        let item = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = item
     }
     
-    // testObjectMapper
-    func testObjectMapper()
-    {
-        let jsonObject: [String: Any] = [
-            "identifier"    : "identiteTest",
-            "name"          : "AssoTest",
-            "phone"         : "0978654321",
-            "email"         : "association@mail.fr",
-            "location"      : "Quelquepart",
-            "createdAt"     : ""
-        ]
-        
-        print(jsonObject)
+    // Test | create
+    func testCreate() {
     }
     
-    func testCourse()
-    {
-        let jsonObject: [String: Any] = [
-            "startOn"    : "courseTest",
-            "endOn"      : "AssoTest",
-            "theme"      : "0978654321",
-            "email"      : "association@mail.fr",
-            "location"   : "Quelquepart",
-            "createdAt"  : ""
-        ]
-        
-        print(jsonObject)
-    }
+    // Test | find
+    func testFind() {}
     
+    // Test | findAll
+    func testFindAll() {}
     
-    func testMembre()
-    {
-        let jsonObject: [String: Any] = [
-            "identifier"    : "identiteTest",
-            "firstname"     : "kipa",
-            "lastname"     : "tchu",
-            "phone"         : "0978654321",
-            "email"         : "association@mail.fr",
-            "location"      : "Quelquepart",
-            "createdAt"     : ""
-        ]
-        
-        print(jsonObject)
-    }
+    // Test | update
+    func testUpdate() {}
+    
+    // Test | delete
+    func testDelete() {}
     
     // Events
     
@@ -142,7 +122,7 @@ class Home: UIViewController {
     
     @objc private func redirectToAssociationVC()
     {
-        let vc = Association.newInstance()
+        let vc = AssociationShow.newInstance()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

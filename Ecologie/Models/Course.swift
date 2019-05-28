@@ -1,5 +1,5 @@
 //
-//  CourseModel.swift
+//  Course.swift
 //  Ecologie
 //
 //  Created by Mohamed dennoun on 04/05/2019.
@@ -9,9 +9,7 @@
 import Foundation
 import ObjectMapper
 
-struct CourseModel:ImmutableMappable {
-    
-    
+struct Course : ImmutableMappable {
     
     var startOn: Date;
     var endOn: Date;
@@ -24,7 +22,7 @@ struct CourseModel:ImmutableMappable {
         self.endOn = try map.value("endOn")
         self.theme = try map.value("theme")
         self.location = try map.value("location")
-        self.createdAt = try map.value("createdAt")
+        self.createdAt = try map.value("createdAt", using: Course.buildDateTransformer())
     }
     
     static func buildDateTransformer() -> DateFormatterTransform {
@@ -38,7 +36,7 @@ struct CourseModel:ImmutableMappable {
         endOn >>> map["endOn"]
         theme >>> map["theme"]
         location >>> map["location"]
-        createdAt >>> (map["createdAt"], CourseModel.buildDateTransformer())
+        createdAt >>> (map["createdAt"], Course.buildDateTransformer())
     }
     
     init(startOn: Date, endOn: Date, theme: String, location: String, createdAt: Date) {
