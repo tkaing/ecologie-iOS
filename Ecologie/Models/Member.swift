@@ -9,8 +9,9 @@
 import Foundation
 import ObjectMapper
 
-struct Member : ImmutableMappable {
+public struct Member : ImmutableMappable {
     
+    var id: String?
     var email: String;
     var firstname: String;
     var lastname: String;
@@ -18,35 +19,20 @@ struct Member : ImmutableMappable {
     var phone: String;
     var location: String;
     var createdAt: Date;
+
     
-    init(map: Map) throws {
-        self.email = try map.value("email")
-        self.firstname = try map.value("firstname")
-        self.lastname = try map.value("lastname")
-        self.birthdate = try map.value("birthdate")
-        self.phone = try map.value("phone")
-        self.location = try map.value("location")
-        self.createdAt = try map.value("createdAt", using: Member.buildDateTransformer())
+    // 1 | Initializer
+    init(id: String?, email: String, firstname: String, lastname: String, birthdate: Date, phone: String, location: String, createdAt: Date) {
+        self.id = id
+        self.email = email
+        self.firstname = firstname
+        self.lastname = lastname
+        self.birthdate = birthdate
+        self.phone = phone
+        self.location = location
+        self.createdAt = createdAt
     }
-    
-    
-    static func buildDateTransformer() -> DateFormatterTransform {
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YYYY-MM-dd"
-        return DateFormatterTransform(dateFormatter: dateFormatter)
-    }
-    
-    mutating func mapping(map: Map) {
-        email >>> map["email"]
-        firstname >>> map["firstname"]
-        lastname >>> map["lastname"]
-        birthdate >>> map["birthdate"]
-        phone >>> map["phone"]
-        location >>> map["location"]
-        createdAt >>> (map["createdAt"], Member.buildDateTransformer())
-    }
-    
+    // 2 | Initializer
     init(email: String, firstname: String, lastname: String, birthdate: Date, phone: String, location: String, createdAt: Date) {
         self.email = email
         self.firstname = firstname
@@ -57,5 +43,29 @@ struct Member : ImmutableMappable {
         self.createdAt = createdAt
     }
     
+    
+    // JSON -> Model
+    public init(map: Map) throws {
+        self.id         = try map.value("_id")
+        self.email = try map.value("email")
+        self.firstname = try map.value("firstname")
+        self.lastname = try map.value("lastname")
+        self.birthdate = try map.value("birthdate", using: DateTransform())
+        self.phone = try map.value("phone")
+        self.location = try map.value("location")
+        self.createdAt = try map.value("createdAt", using: DateTransform())
+    }
+    
+    // Model -> JSON
+    public func mapping(map: Map) {
+        id          >>> (map["_id"])
+        email >>> map["email"]
+        firstname >>> map["firstname"]
+        lastname >>> map["lastname"]
+        birthdate >>> (map["birthdate"], using: DateTransform())
+        phone >>> map["phone"]
+        location >>> map["location"]
+        createdAt >>> (map["createdAt"], using: DateTransform())
+    }
     
 }
