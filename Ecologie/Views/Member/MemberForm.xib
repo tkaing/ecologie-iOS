@@ -12,6 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MemberForm" customModule="Ecologie" customModuleProvider="target">
             <connections>
+                <outlet property="birthdate" destination="nJ1-1E-maY" id="cHQ-mO-AfX"/>
+                <outlet property="firstname" destination="UYl-Rr-SDi" id="kHL-6r-Lxx"/>
+                <outlet property="lastname" destination="GHY-yH-0QT" id="9Nt-0P-Cjz"/>
+                <outlet property="location" destination="Bda-cu-F1c" id="N6R-ho-FOw"/>
+                <outlet property="phone" destination="Gs0-Jp-nVy" id="9Jb-gb-WxA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -86,6 +91,9 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <state key="normal" title="Valider"/>
+                                    <connections>
+                                        <action selector="validateUser:" destination="-1" eventType="touchUpInside" id="lgZ-Zn-61i"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJa-vs-q8q">
                                     <rect key="frame" x="47" y="98" width="48" height="20.5"/>
