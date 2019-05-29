@@ -52,8 +52,7 @@ class Home: UIViewController {
     }
     
     // Test | create
-    func testCreate() {
-    }
+    func testCreate() {}
     
     // Test | find
     func testFind() {}
