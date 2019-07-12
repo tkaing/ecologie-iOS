@@ -22,7 +22,7 @@ class AssociationShow: UIViewController {
         // Do any additional setup after loading the view.
         initNavigation()
         
-        AssociationService.default.find(id: "5cd7484bc6bf6d320ac9a545") { (association) in
+        AssociationService.default.find(id: "5cedd001c37f050017590698") { (association) in
             self.name.text = association.name
             self.identifier.text = association.identifier
             self.email.text = association.email
@@ -62,6 +62,7 @@ class AssociationShow: UIViewController {
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm" //Specify your format that you want
         return dateFormatter.string(from: date)
     }
+    
     /*
     // MARK: - Navigation
 
