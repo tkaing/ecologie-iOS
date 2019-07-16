@@ -7,70 +7,87 @@
 //
 
 import UIKit
+import SideMenu
 
 class AssociationShow: UIViewController {
-
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var identifier: UILabel!
-    @IBOutlet weak var email: UILabel!
-    @IBOutlet weak var birthdate: UILabel!
-    @IBOutlet weak var location: UILabel!
+    
+    // Logo
+    @IBOutlet var logo: UIImageView!
+    
+    // Button
+    @IBOutlet var update: UIButton!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         initNavigation()
         
-        AssociationService.default.find(id: "5cedd001c37f050017590698") { (association) in
+        applyStyle()
+        
+        /*AssociationService.default.find(id: "5cedd001c37f050017590698") { (association) in
             self.name.text = association.name
             self.identifier.text = association.identifier
             self.email.text = association.email
-            self.birthdate.text = self.dateToString(date: association.birthdate)
+            self.birthdate.text = DateManager.default.toString(date: association.birthdate)
             self.location.text = association.location
-        }
-    }
-    
-    // Instance
-    
-    class func newInstance() ->
-        AssociationShow {
-            return AssociationShow()
+        }*/
     }
     
     // Initialization
     
-    func initNavigation()
-    {
-        // *** Title ***
+    func initNavigation() {
+        
+        // Title
         self.navigationItem.title = "Mon association"
         
-        // *** Back button ***
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
+        // Left Button
+        let leftButton = NavigationManager.default.button(view: self)
+        leftButton.addTarget(self, action: #selector(panel), for: .touchUpInside)
     }
     
-
+    // Events
+    
+    @IBAction func emailInput(_ sender: UITextField) {
+    }
+    
+    @IBAction func phoneInput(_ sender: UITextField) {
+    }
+    
+    // Objectif-C
+    
+    @objc func panel() {
+        
+        // ### Show Menu ###
+        let view: UIViewController = SideMenuManager.default.menuLeftNavigationController!
+        present(view, animated: true, completion: nil)
+    }
+    
+    // Methods
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    public func dateToString(date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.timeZone = TimeZone(abbreviation: "GMT") //Set timezone that you want
-        dateFormatter.locale = NSLocale.current
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm" //Specify your format that you want
-        return dateFormatter.string(from: date)
+    // Styles
+    
+    func applyStyle() {
+        
+        // Logo
+        self.styleImageView(view: self.logo)
+        
+        // Update Button
+        self.styleUpdate(button: self.update)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func styleImageView(view: UIImageView) {
+        
+        view.image = #imageLiteral(resourceName: "feuille")
     }
-    */
-
+    
+    func styleUpdate(button: UIButton) {
+        
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = ColorManager.default.primary()
+    }
 }

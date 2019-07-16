@@ -18,7 +18,7 @@ public class UserService: RequestService<Member>  {
         // code...
     }
     
-     public func create(member: Member, complete: @escaping (Int) -> Void) {
+    public func create(member: Member, complete: @escaping (Int) -> Void) {
         
         let route = self.API_DEFAULT + self.ROUTE_BASE
         

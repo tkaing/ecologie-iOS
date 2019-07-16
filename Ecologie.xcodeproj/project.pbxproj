@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,15 @@
 		0C47AD90227DFFE80059D569 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C47AD8F227DFFE80059D569 /* Course.swift */; };
 		0C47AD92227E00050059D569 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C47AD91227E00050059D569 /* Member.swift */; };
 		1D8A8BFBF57920C9A2F1F20E /* Pods_Ecologie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5D472C3723D676CFD0B3F8 /* Pods_Ecologie.framework */; };
+		3F058EAA22DDC144004F513A /* CourseForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F058EA822DDC144004F513A /* CourseForm.swift */; };
+		3F058EAB22DDC144004F513A /* CourseForm.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F058EA922DDC144004F513A /* CourseForm.xib */; };
+		3F623E2B22DB273F00A5F2A9 /* AssociationForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F623E2922DB273F00A5F2A9 /* AssociationForm.swift */; };
+		3F623E2C22DB273F00A5F2A9 /* AssociationForm.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F623E2A22DB273F00A5F2A9 /* AssociationForm.xib */; };
+		3F85122222DA5F5400B79B6D /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F85122122DA5F5400B79B6D /* ColorManager.swift */; };
+		3F85122422DA5F9100B79B6D /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F85122322DA5F9100B79B6D /* NavigationManager.swift */; };
+		3F8B8B9222D92E5400D81DD2 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8B8B9022D92E5400D81DD2 /* Navigation.swift */; };
+		3F8B8B9322D92E5400D81DD2 /* Navigation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F8B8B9122D92E5400D81DD2 /* Navigation.xib */; };
+		3F968C2722DB623000905C45 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F968C2622DB623000905C45 /* DateManager.swift */; };
 		509F1CDD2283F9520051F113 /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509F1CDC2283F9520051F113 /* RequestService.swift */; };
 		50E4BD6F2235778400A03834 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4BD6E2235778400A03834 /* AppDelegate.swift */; };
 		50E4BD762235778800A03834 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50E4BD752235778800A03834 /* Assets.xcassets */; };
@@ -24,14 +33,10 @@
 		50E4BD832235783500A03834 /* Authentication.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E4BD812235783500A03834 /* Authentication.xib */; };
 		50E4BD862235853A00A03834 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4BD842235853A00A03834 /* Home.swift */; };
 		50E4BD872235853A00A03834 /* Home.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E4BD852235853A00A03834 /* Home.xib */; };
-		50E4BD8A2235897F00A03834 /* AssociationForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4BD882235897F00A03834 /* AssociationForm.swift */; };
-		50E4BD8B2235897F00A03834 /* AssociationForm.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E4BD892235897F00A03834 /* AssociationForm.xib */; };
 		50E4BD8E22358CF100A03834 /* MemberForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4BD8C22358CF100A03834 /* MemberForm.swift */; };
 		50E4BD8F22358CF100A03834 /* MemberForm.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E4BD8D22358CF100A03834 /* MemberForm.xib */; };
 		50E4BD9222358EA100A03834 /* Members.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4BD9022358EA100A03834 /* Members.swift */; };
 		50E4BD9322358EA100A03834 /* Members.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E4BD9122358EA100A03834 /* Members.xib */; };
-		50E4BD9622358FD000A03834 /* CourseForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4BD9422358FD000A03834 /* CourseForm.swift */; };
-		50E4BD9722358FD000A03834 /* CourseForm.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E4BD9522358FD000A03834 /* CourseForm.xib */; };
 		50E4BD9A22358FE000A03834 /* Courses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4BD9822358FE000A03834 /* Courses.swift */; };
 		50E4BD9B22358FE000A03834 /* Courses.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E4BD9922358FE000A03834 /* Courses.xib */; };
 		50E4BD9E2235955200A03834 /* AssociationShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4BD9C2235955100A03834 /* AssociationShow.swift */; };
@@ -47,6 +52,15 @@
 		0C47AD8D227DFF980059D569 /* Association.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Association.swift; sourceTree = "<group>"; };
 		0C47AD8F227DFFE80059D569 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		0C47AD91227E00050059D569 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		3F058EA822DDC144004F513A /* CourseForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseForm.swift; sourceTree = "<group>"; };
+		3F058EA922DDC144004F513A /* CourseForm.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseForm.xib; sourceTree = "<group>"; };
+		3F623E2922DB273F00A5F2A9 /* AssociationForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssociationForm.swift; sourceTree = "<group>"; };
+		3F623E2A22DB273F00A5F2A9 /* AssociationForm.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssociationForm.xib; sourceTree = "<group>"; };
+		3F85122122DA5F5400B79B6D /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
+		3F85122322DA5F9100B79B6D /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
+		3F8B8B9022D92E5400D81DD2 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		3F8B8B9122D92E5400D81DD2 /* Navigation.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Navigation.xib; sourceTree = "<group>"; };
+		3F968C2622DB623000905C45 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		509F1CDC2283F9520051F113 /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
 		50E4BD6B2235778400A03834 /* Ecologie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ecologie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50E4BD6E2235778400A03834 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,14 +71,10 @@
 		50E4BD812235783500A03834 /* Authentication.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Authentication.xib; sourceTree = "<group>"; };
 		50E4BD842235853A00A03834 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		50E4BD852235853A00A03834 /* Home.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Home.xib; sourceTree = "<group>"; };
-		50E4BD882235897F00A03834 /* AssociationForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssociationForm.swift; sourceTree = "<group>"; };
-		50E4BD892235897F00A03834 /* AssociationForm.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssociationForm.xib; sourceTree = "<group>"; };
 		50E4BD8C22358CF100A03834 /* MemberForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberForm.swift; sourceTree = "<group>"; };
 		50E4BD8D22358CF100A03834 /* MemberForm.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberForm.xib; sourceTree = "<group>"; };
 		50E4BD9022358EA100A03834 /* Members.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Members.swift; sourceTree = "<group>"; };
 		50E4BD9122358EA100A03834 /* Members.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Members.xib; sourceTree = "<group>"; };
-		50E4BD9422358FD000A03834 /* CourseForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseForm.swift; sourceTree = "<group>"; };
-		50E4BD9522358FD000A03834 /* CourseForm.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseForm.xib; sourceTree = "<group>"; };
 		50E4BD9822358FE000A03834 /* Courses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Courses.swift; sourceTree = "<group>"; };
 		50E4BD9922358FE000A03834 /* Courses.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Courses.xib; sourceTree = "<group>"; };
 		50E4BD9C2235955100A03834 /* AssociationShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssociationShow.swift; sourceTree = "<group>"; };
@@ -107,9 +117,29 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		3F85122022DA5F3900B79B6D /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				3F85122122DA5F5400B79B6D /* ColorManager.swift */,
+				3F85122322DA5F9100B79B6D /* NavigationManager.swift */,
+				3F968C2622DB623000905C45 /* DateManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		3F8B8B8F22D92E3200D81DD2 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				3F8B8B9022D92E5400D81DD2 /* Navigation.swift */,
+				3F8B8B9122D92E5400D81DD2 /* Navigation.xib */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		504C8753226E0970005D17D3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3F8B8B8F22D92E3200D81DD2 /* Navigation */,
 				504C8758226E0A92005D17D3 /* Authentication */,
 				504C8757226E0A08005D17D3 /* Association */,
 				504C8756226E0A02005D17D3 /* Course */,
@@ -131,10 +161,10 @@
 		504C8755226E09F5005D17D3 /* Member */ = {
 			isa = PBXGroup;
 			children = (
-				50E4BD8C22358CF100A03834 /* MemberForm.swift */,
-				50E4BD8D22358CF100A03834 /* MemberForm.xib */,
 				50E4BD9022358EA100A03834 /* Members.swift */,
 				50E4BD9122358EA100A03834 /* Members.xib */,
+				50E4BD8C22358CF100A03834 /* MemberForm.swift */,
+				50E4BD8D22358CF100A03834 /* MemberForm.xib */,
 			);
 			path = Member;
 			sourceTree = "<group>";
@@ -142,12 +172,12 @@
 		504C8756226E0A02005D17D3 /* Course */ = {
 			isa = PBXGroup;
 			children = (
-				50E4BD9422358FD000A03834 /* CourseForm.swift */,
-				50E4BD9522358FD000A03834 /* CourseForm.xib */,
 				50E4BD9822358FE000A03834 /* Courses.swift */,
 				50E4BD9922358FE000A03834 /* Courses.xib */,
 				0C47AD87227DF49D0059D569 /* CourseShow.swift */,
 				0C47AD88227DF49D0059D569 /* CourseShow.xib */,
+				3F058EA822DDC144004F513A /* CourseForm.swift */,
+				3F058EA922DDC144004F513A /* CourseForm.xib */,
 			);
 			path = Course;
 			sourceTree = "<group>";
@@ -157,8 +187,8 @@
 			children = (
 				50E4BD9C2235955100A03834 /* AssociationShow.swift */,
 				50E4BD9D2235955200A03834 /* AssociationShow.xib */,
-				50E4BD882235897F00A03834 /* AssociationForm.swift */,
-				50E4BD892235897F00A03834 /* AssociationForm.xib */,
+				3F623E2922DB273F00A5F2A9 /* AssociationForm.swift */,
+				3F623E2A22DB273F00A5F2A9 /* AssociationForm.xib */,
 			);
 			path = Association;
 			sourceTree = "<group>";
@@ -193,6 +223,7 @@
 		50E4BD6D2235778400A03834 /* Ecologie */ = {
 			isa = PBXGroup;
 			children = (
+				3F85122022DA5F3900B79B6D /* Managers */,
 				0C47AD8C227DFF540059D569 /* Models */,
 				0C47AD7F227DF3200059D569 /* Services */,
 				504C8753226E0970005D17D3 /* Views */,
@@ -255,6 +286,7 @@
 				TargetAttributes = {
 					50E4BD6A2235778400A03834 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -281,12 +313,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F058EAB22DDC144004F513A /* CourseForm.xib in Resources */,
+				3F623E2C22DB273F00A5F2A9 /* AssociationForm.xib in Resources */,
 				50E4BD832235783500A03834 /* Authentication.xib in Resources */,
-				50E4BD9722358FD000A03834 /* CourseForm.xib in Resources */,
 				50E4BD792235778800A03834 /* LaunchScreen.storyboard in Resources */,
+				3F8B8B9322D92E5400D81DD2 /* Navigation.xib in Resources */,
 				50E4BD762235778800A03834 /* Assets.xcassets in Resources */,
 				50E4BD9F2235955200A03834 /* AssociationShow.xib in Resources */,
-				50E4BD8B2235897F00A03834 /* AssociationForm.xib in Resources */,
 				50E4BD8F22358CF100A03834 /* MemberForm.xib in Resources */,
 				50E4BD9B22358FE000A03834 /* Courses.xib in Resources */,
 				50E4BD872235853A00A03834 /* Home.xib in Resources */,
@@ -326,18 +359,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Ecologie/Pods-Ecologie-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Ecologie/Pods-Ecologie-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Ecologie/Pods-Ecologie-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -351,21 +377,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F85122222DA5F5400B79B6D /* ColorManager.swift in Sources */,
 				50E4BD822235783500A03834 /* Authentication.swift in Sources */,
 				50E4BD9A22358FE000A03834 /* Courses.swift in Sources */,
 				0C47AD81227DF39D0059D569 /* UserService.swift in Sources */,
 				509F1CDD2283F9520051F113 /* RequestService.swift in Sources */,
-				50E4BD9622358FD000A03834 /* CourseForm.swift in Sources */,
 				50E4BD9E2235955200A03834 /* AssociationShow.swift in Sources */,
 				0C47AD83227DF3D00059D569 /* AssociationService.swift in Sources */,
+				3F968C2722DB623000905C45 /* DateManager.swift in Sources */,
 				0C47AD92227E00050059D569 /* Member.swift in Sources */,
+				3F058EAA22DDC144004F513A /* CourseForm.swift in Sources */,
+				3F85122422DA5F9100B79B6D /* NavigationManager.swift in Sources */,
 				0C47AD90227DFFE80059D569 /* Course.swift in Sources */,
+				3F623E2B22DB273F00A5F2A9 /* AssociationForm.swift in Sources */,
 				0C47AD89227DF49D0059D569 /* CourseShow.swift in Sources */,
 				0C47AD8E227DFF980059D569 /* Association.swift in Sources */,
 				50E4BD6F2235778400A03834 /* AppDelegate.swift in Sources */,
-				50E4BD8A2235897F00A03834 /* AssociationForm.swift in Sources */,
 				0C47AD85227DF3E70059D569 /* CourseService.swift in Sources */,
 				50E4BD862235853A00A03834 /* Home.swift in Sources */,
+				3F8B8B9222D92E5400D81DD2 /* Navigation.swift in Sources */,
 				50E4BD9222358EA100A03834 /* Members.swift in Sources */,
 				50E4BD8E22358CF100A03834 /* MemberForm.swift in Sources */,
 			);
@@ -513,7 +543,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Dt.Ecologie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -532,7 +562,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Dt.Ecologie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

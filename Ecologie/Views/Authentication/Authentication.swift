@@ -7,69 +7,95 @@
 //
 
 import UIKit
+import SideMenu
 
 class Authentication: UIViewController {
 
+    @IBOutlet var logo: UIImageView!
+    
+    @IBOutlet var loginInput: UITextField!
+    @IBOutlet var codeInput: UITextField!
+    
+    @IBOutlet var connect: UIButton!
+    @IBOutlet var register: UIButton!
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
         initNavigation()
+        
+        applyStyle()
     }
     
     // Initialization
     
-    func initNavigation()
-    {
-        // *** Title ***
-        self.navigationItem.title = "S'authentifier"
+    func initNavigation() {
         
-        // *** Back button ***
-        let barButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
-        self.navigationItem.backBarButtonItem = barButtonItem
+        // Title
+        self.navigationItem.title = "Authentification"
     }
     
     // Events
     
-    @IBAction func loggedButton(_ sender: UIButton)
-    {
-        self.redirectToHomeVC()
+    @IBAction func connect(_ sender: UIButton) {
+        
+        let to = AssociationShow()
+        
+        NavigationManager.default.redirectTo(from: self, to: to)
     }
     
-    @IBAction func registerButton(_ sender: UIButton)
-    {
-        self.redirectToAssoFormVC()
+    @IBAction func register(_ sender: UIButton) {
+        
+        let to = AssociationForm()
+        
+        NavigationManager.default.redirectTo(from: self, to: to)
     }
     
     // Objectif-C
     
-    @objc private func redirectToHomeVC()
-    {
-        let homeVC = Home.newInstance()
-        self.navigationController?.pushViewController(homeVC, animated: true)
+    @objc func panel() {
+        
+        // ### Show Menu ###
+        let view: UIViewController = SideMenuManager.default.menuLeftNavigationController!
+        present(view, animated: true, completion: nil)
     }
     
-    @objc private func redirectToAssoFormVC()
-    {
-        let assoVC = AssociationForm.newInstance()
-        self.navigationController?.pushViewController(assoVC, animated: true)
-    }
-    
+    // Methods
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Styles
+    
+    func applyStyle() {
+        
+        // Logo
+        self.styleImageView(view: self.logo)
+        
+        // Connect Button
+        self.styleConnect(button: self.connect)
+        
+        // Register Button
+        self.styleRegister(button: self.register)
     }
-    */
-
+    
+    func styleImageView(view: UIImageView) {
+        
+        view.image = #imageLiteral(resourceName: "feuille")
+    }
+    
+    func styleConnect(button: UIButton) {
+        
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = ColorManager.default.primary()
+    }
+    
+    func styleRegister(button: UIButton) {
+        
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = ColorManager.default.info()
+    }
 }

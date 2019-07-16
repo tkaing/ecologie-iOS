@@ -7,43 +7,72 @@
 //
 
 import UIKit
+import SideMenu
 
 class Courses: UIViewController {
     
-    var courses: [Course]!
-    var increment: Int = 0
+    @IBOutlet var tableView: UITableView!
     
-    @IBOutlet var endLabel: UILabel!
-    @IBOutlet var startLabel: UILabel!
-    @IBOutlet var themeLabel: UILabel!
+    public var courses: [Course] = [
+        Course(id: "xfg1", startOn: Date(), endOn: Date(), theme: "Mégot", location: "(1,1)", createdAt: Date()),
+        Course(id: "xec2", startOn: Date(), endOn: Date(), theme: "Tout", location: "(2,2)", createdAt: Date())
+    ]
+    
+    public var cellID = "cellID"
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         initNavigation()
         
-        // Load All Courses
-        loadAllCourses()
-    }
-    
-    // Instance
-    
-    class func newInstance() ->
-        Courses {
-            return Courses()
+        initTableView()
+        
+        //loadAllCourses()
     }
     
     // Initialization
     
-    func initNavigation()
-    {
-        // *** Title ***
-        self.navigationItem.title = "Tous les parcours"
+    func initNavigation() {
         
-        // *** Back button ***
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
+        // Title
+        self.navigationItem.title = "Liste de parcours"
+        
+        // Left Button
+        let leftButton = NavigationManager.default.button(view: self)
+        leftButton.addTarget(self, action: #selector(panel), for: .touchUpInside)
+        
+        // Right Button
+        let rightButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(add))
+        self.navigationItem.rightBarButtonItem = rightButton
     }
+    
+    func initTableView() {
+        
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.cellID)
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+    }
+    
+    // Events
+    
+    // Objectif-C
+    
+    @objc func panel() {
+        
+        // ### Show Menu ###
+        let view: UIViewController = SideMenuManager.default.menuLeftNavigationController!
+        present(view, animated: true, completion: nil)
+    }
+    
+    @objc func add() {
+        
+        let to = CourseForm()
+        
+        NavigationManager.default.redirectTo(from: self, to: to)
+    }
+    
+    // Methods
     
     func loadAllCourses() -> Void {
         
@@ -55,34 +84,7 @@ class Courses: UIViewController {
                 return
             }
             
-            self.showCourse(course: first)
-        }
-    }
-    
-    func showCourse(course: Course) -> Void {
-        
-        self.themeLabel.text = "Thème: " + course.theme
-        self.startLabel.text = "Débute le " + self.dateToString(date: course.startOn)
-        self.endLabel.text = "Finit le " + self.dateToString(date: course.endOn)
-    }
-    
-    @IBAction func backButton(_ sender: UIButton) {
-        
-        if (self.courses.indices.contains(increment - 1)) {
-            
-            increment -= 1
-            let item = self.courses[increment]
-            self.showCourse(course: item)
-        }
-    }
-    
-    @IBAction func nextButton(_ sender: UIButton) {
-        
-        if (self.courses.indices.contains(increment + 1)) {
-            
-            increment += 1
-            let item = self.courses[increment]
-            self.showCourse(course: item)
+            print(first)
         }
     }
 
@@ -91,23 +93,71 @@ class Courses: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // Styles
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+extension Courses: UITableViewDelegate, UITableViewDataSource {
     
-    public func dateToString(date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.timeZone = TimeZone(abbreviation: "GMT") //Set timezone that you want
-        dateFormatter.locale = NSLocale.current
-        dateFormatter.dateFormat = "yyyy-MM-dd à HH:mm" //Specify your format that you want
-        return dateFormatter.string(from: date)
+    // Count Cells
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.courses.count
     }
-
+    
+    // Cell Content
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: UITableViewCell? = self.tableView.dequeueReusableCell(withIdentifier: self.cellID)
+        let date: Date = self.courses[indexPath.row].createdAt
+        cell?.textLabel?.text = DateManager.default.toString(date: date)
+        return cell!
+    }
+    
+    // Cell Action Leading
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let editAction = UIContextualAction(style: .normal, title: "", handler: { (ac: UIContextualAction, view: UIView, success: (Bool) -> Void) in
+            
+            let course: Course = self.courses[indexPath.row]
+            
+            let to = CourseForm()
+            to.course = course
+            
+            NavigationManager.default.redirectTo(from: self, to: to)
+            
+            success(true)
+        })
+        
+        editAction.image = #imageLiteral(resourceName: "edit")
+        editAction.backgroundColor = ColorManager.default.warning()
+        
+        return UISwipeActionsConfiguration(actions: [editAction])
+        
+    }
+    
+    // Cell Action Trailing
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .normal, title: "", handler: { (ac: UIContextualAction, view: UIView, success: (Bool) -> Void) in
+            
+            self.courses.remove(at: indexPath.row)
+            
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+            success(true)
+        })
+        
+        deleteAction.image = #imageLiteral(resourceName: "garbage")
+        deleteAction.backgroundColor = ColorManager.default.danger()
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+    
+    // On Select
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let course: Course = self.courses[indexPath.row]
+        
+        let to = CourseForm()
+        to.course = course
+        to.readonly = true
+        
+        NavigationManager.default.redirectTo(from: self, to: to)
+    }
 }

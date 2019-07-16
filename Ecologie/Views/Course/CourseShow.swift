@@ -7,24 +7,43 @@
 //
 
 import UIKit
+import SideMenu
 
 class CourseShow: UIViewController {
+    
+    public var course: Course!
 
     override func viewDidLoad() {
+     
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        initNavigation()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    // Initialization
+    
+    func initNavigation() {
+        
+        // Title
+        self.navigationItem.title = "Mon parcours"
+        
+        // Left Button
+        let leftButton = NavigationManager.default.button(view: self)
+        leftButton.addTarget(self, action: #selector(panel), for: .touchUpInside)
     }
-    */
-
+    
+    // Events
+    
+    // Objectif-C
+    
+    @objc func panel() {
+        
+        // ### Show Menu ###
+        let view: UIViewController = SideMenuManager.default.menuLeftNavigationController!
+        present(view, animated: true, completion: nil)
+    }
+    
+    // Methods
+    
+    // Styles
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SideMenu
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,10 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        // *** Show AuthenticationVC (with navbar) ***
+        // *** Authentication ***
         let authViewController = Authentication()
         let navController = UINavigationController(rootViewController: authViewController)
         
@@ -26,6 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.rootViewController = navController
         window.makeKeyAndVisible()
         self.window = window
+        
+        // *** Menu ***
+        let menuView = UISideMenuNavigationController(rootViewController: Navigation())
+        SideMenuManager.default.menuLeftNavigationController = menuView
         
         return true
     }
@@ -51,7 +55,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 

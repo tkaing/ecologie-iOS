@@ -7,87 +7,109 @@
 //
 
 import UIKit
+import SideMenu
 
 class MemberForm: UIViewController {
-
-    @IBOutlet weak var firstname: UITextField!
-    @IBOutlet weak var lastname: UITextField!
-    @IBOutlet weak var phone: UITextField!
-    @IBOutlet weak var location: UITextField!
-    @IBOutlet weak var birthdate: UIDatePicker!
+    
+    @IBOutlet var emailInput: UITextField!
+    @IBOutlet var submit: UIButton!
+    
+    public var member: Member?
+    public var readonly: Bool = false
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         initNavigation()
-    }
-    
-    // Instance
-    
-    class func newInstance() ->
-        MemberForm {
-            return MemberForm()
+        
+        initWidget()
+        
+        applyStyle()
     }
     
     // Initialization
     
-    func initNavigation()
-    {
-        // *** Title ***
-        self.navigationItem.title = "Ajouter un membre"
+    func initNavigation() {
         
-        // *** Back button ***
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
+        // Title
+        self.navigationItem.title = self.initTitle()
     }
     
-
+    func initWidget() {
+        
+        if let o = self.member {
+            
+            // Set Data
+            self.emailInput.text = o.email
+            self.submit.setTitle("Modifier", for: .normal)
+            
+            // Disable Widgets
+            if self.readonly {
+                
+                self.emailInput.isUserInteractionEnabled = false
+                self.submit.isHidden = true
+            }
+        }
+    }
+    
+    func initTitle() -> String {
+        
+        if self.member != nil {
+            
+            if self.readonly {
+                
+                return "@-mail de l'organisateur"
+            }
+            return "Modifier un organisateur"
+        }
+        return "Ajouter un organisateur"
+    }
+    
+    // Events
+    
+    // Objectif-C
+    
+    @objc func panel() {
+        
+        // ### Show Menu ###
+        let view: UIViewController = SideMenuManager.default.menuLeftNavigationController!
+        present(view, animated: true, completion: nil)
+    }
+    
+    // Methods
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func validateUser(_ sender: UIButton) {
+    
+    // Submission
+    
+    func onSubmit() {
         
-        guard let firstname = firstname.text else {
-            print("firstname is nil")
-            return
-        }
-        guard let lastname = lastname.text else {
-            print("lastname is nil")
-            return
-        }
-        guard let phone = phone.text else {
-            print("phone is nil")
-            return
-        }
-        guard let location = location.text else {
-            print("location is nil")
-            return
-        }
-       
-        let user = Member(email: "mailtest@mail.fr", firstname: firstname, lastname: lastname, birthdate: birthdate.date, phone: phone, location: location, createdAt: Date())
-        UserService.default.create(member: user) { (status) in
-            print(status)
-        }
-        self.redirectToHomeVC()
+        // code...
     }
     
-    // Objectif-C
+    // Styles
     
-    @objc private func redirectToHomeVC()
-    {
-        let vc = Home.newInstance()
-        self.navigationController?.pushViewController(vc, animated: true)
+    func applyStyle() {
+        
+        // Submit Button
+        self.styleSubmit(button: self.submit)
     }
     
-    /*
-    // MARK: - Navigation
+    func styleSubmit(button: UIButton) {
+        
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = ColorManager.default.primary()
+    }
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension MemberForm {
+    
+    func isEditing() -> Bool {
+        
+        return self.member != nil && self.readonly == false
     }
-    */
-
 }

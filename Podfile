@@ -8,5 +8,6 @@ target 'Ecologie' do
   # Pods for Ecologie
   pod 'Alamofire'
   pod 'ObjectMapper'
+  pod 'SideMenu'
 
 end
